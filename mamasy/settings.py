@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
     'store',
     'django_filters',
-    'django_heroku',
+    'whitenoise',
 ]
 
 MIDDLEWARE = [
