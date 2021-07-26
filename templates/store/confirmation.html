@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_name }}{% endblock title %}
+
+{% block content %}
+<!-- Start Cart  -->
+    <style media="screen">
+        .success-page{
+            text-align: center;
+            transform: perspective(1px) translateY(50%)
+            }
+        .success-page img{
+            max-width:62px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h2{
+            color:#0014ff;
+            font-size: 2.2rem;
+            font-weight: 500;
+        }
+        p{
+            font-size: 1.3rem;
+        }
+        a{
+            text-decoration: none !important;
+            font-size: 1.3rem;
+        }
+    </style>
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto">
+                    <div class="success-page" style="top:auto;">
+                    <img  src="http://share.ashiknesin.com/green-checkmark.png" class="center" alt="" />
+                    <h2>Payment Successful !</h2>
+                    <p>We are delighted to inform you that we received your payments</p>
+            {#        <a style="text-decoration:none;" href="#" class="btn-view-orders">View Orders</a>#}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-2">
+                <div class="col-lg-7 mx-auto mt-5 align-content-center">
+                    <div class="col-8 my-3 d-flex shopping-box"><a href="{% url 'store:my_order' %}" style="color: #FFFFFF;" class="ml-auto btn hvr-hover">View Orders</a> </div>
+                    <div class="d-flex justify-content-center links">
+                        <a href="{% url 'store:boutique' 1 %}" class="ml-5">Continuez l'achat ?</a>
+                    </div>
+                </div>
+            </div>
+{#        <a style="text-decoration:none;" href="#">Continue Shopping</a>#}
+
+        </div>
+    </div>
+    <!-- End Cart -->
+{% endblock content %}

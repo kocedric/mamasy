@@ -1,0 +1,1 @@
+web: gunicorn mamasy.wsgi

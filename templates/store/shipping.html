@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_name }}{% endblock title %}
+
+{% block content %}
+    <!-- Start Cart  -->
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row new-account-login">
+                <div class="col-sm-10 col-lg-9 mb-3 mx-auto">
+                    <div class="title-left">
+                        <h3>Address de livraison</h3>
+                    </div>
+                    <h5><a data-toggle="collapse" href="#formLogin" role="button" aria-expanded="false">Clicker ici</a></h5>
+                    <form class="mt-3 collapse review-form-box" id="formLogin" action="{% url 'store:shipping' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row" >
+                            <div class="form-group col-md-6">
+                                <label for="InputAddress" class="mb-0">Lieu de livraison</label>
+                                <input type="text" name="shipping_address" class="form-control" id="InputAddress" placeholder="Entrez l'address de livraison"> </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputPhone" class="mb-0">Phone</label>
+                                <input type="text" name="phone" class="form-control" id="InputPhone" placeholder="05 21 21 21 21"> </div>
+                        </div>
+                        <button type="submit" class="btn hvr-hover">Envoyer</button>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- End Cart -->
+{% endblock content %}

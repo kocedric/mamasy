@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page_name }}{% endblock title %}
+
+{% block content %}
+
+    <!-- Start Wishlist  -->
+    <div class="wishlist-box-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-main table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Images</th>
+                                    <th>Product Name</th>
+                                    <th>Unit Price </th>
+                                    <th>Quantité</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for command_item in commande_items %}
+                                <tr>
+                                    <td class="thumbnail-img">
+                                        <a href="#">
+									<img class="img-fluid" src="{{ command_item.product.image.url }}" alt="" />
+								</a>
+                                    </td>
+                                    <td class="name-pr">
+                                        <a href="#">
+									{{ command_item.product.name }}
+								</a>
+                                    </td>
+                                    <td class="price-pr">
+                                        <p>{{ command_item.product.price_including_vat }} FCFA</p>
+                                    </td>
+                                    <td class="quantity-box">{{ command_item.qty }}</td>
+                                    <td class="add-pr">
+                                        <p>{{ command_item.total }} FCFA</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <div class="d-flex gr-total">
+                                <h5>Grand Total</h5>
+                                <div class="ml-auto h5">{{ order.total }} FCFA</div>
+                            </div><br><hr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Wishlist -->
+{% endblock content %}
